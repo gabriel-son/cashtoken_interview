@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #ececec;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            border-bottom: 1px solid #ccc;
+            color: #3F51B5;
+            padding-bottom: 8px
+        }
+
+        .container {
+            margin: auto;
+            width: 350px;
+            text-align: center;
+        }
+
+        .listFlex {
+            display: flex;
+            justify-content: center;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #back {
+            border: 1px solid black;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        #avatar {
+            margin-top: 100px;
+        }
+    </style>
+    <title>User Profile</title>
+</head>
+
+<body>
+    <div class="container">
+        <span><a href=<%= dashboardURI %> id='back'>Back</a></span>
+        <% if (email) {%>
+        <h1><%= display_name %></h1>
+        <h3>Personal Profile</h3>
+        <img src="https://res.cloudinary.com/at-health/image/upload/v1640870504/ATHEALTH/Images/aeqeerxhz0lxxev9k7zw.png"
+            alt="profile-picture" />
+        <h4>Name</h4>
+        <p><%= first_name %> <%= last_name %> </p>
+        <h4>Email</h4>
+        <p><%= email %> </p>
+        <h4>Gender</h4>
+        <p><%= gender %> </p>
+        <h4>Username</h4>
+        <p><%= username  %> </p>
+        <% } else { %>
+        <img src=<%= avatar  %> alt="profile-picture" id='avatar' />
+        <h1><%= displayName %> </h1>
+        <% } %>
+    </div>
+</body>
+
+</html>

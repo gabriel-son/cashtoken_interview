@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #ececec;
+        }
+
+        h1 {
+            /* border-bottom: 1px solid #ccc; */
+            color: #3F51B5;
+            padding-bottom: 50px
+        }
+
+        .container {
+
+            margin: auto;
+            width: 350px;
+            text-align: center;
+        }
+
+
+        #login {
+            border: 1px solid black;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            padding: 10px 50px;
+            margin-top: 30px;
+        }
+
+        .snapchat-btn {
+            width: 300px;
+            display: flex;
+            align-items: center;
+            background-color: yellow;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            margin-top: 70px;
+            margin-left: 25px;
+            text-decoration: none;
+        }
+
+        .snap-text {
+            flex: 6;
+            font-size: 18px;
+            font-weight: 600;
+            color: black;
+        }
+    </style>
+    <title>User Profile</title>
+</head>
+
+<body>
+    <div class="container">
+        <% if(successful === 'false') {%>
+        <p style="color: red;">Login Failed</p>
+        <% } %>
+        <h1>Welcome to cashtoken Authenticator</h1>
+        <a href=<%= cashtokenAuthURI %> id='login'>Login</a>
+        <a href=<%= snapchatAuthURI %> class="snapchat-btn">
+            <img src='ghostlogo.svg' alt="snapchat" width="50" height="50" id="snapchatLogo">
+            <div class='snap-text'>
+                Continue with Snapchat
+            </div>
+        </a>
+    </div>
+
+</body>
+
+</html>
